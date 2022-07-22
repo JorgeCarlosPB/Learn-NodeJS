@@ -20,30 +20,30 @@ app.set('view engine', 'hbs')
 //Servir contenido estatico
 app.use(express.static('public'))
 
-app.get('/', (req, res)=>{
-    res.render('home', {
-        nombre: 'Jorge Carlos Pérez',
-        titulo: 'Curso de Node'
-    })
-})
+// app.get('/', (req, res)=>{
+//     res.render('home', {
+//         nombre: 'Jorge Carlos Pérez',
+//         titulo: 'Curso de Node'
+//     })
+// })
 
 
-app.get('/generic', (req, res)=>{
-    res.render('generic', {
-        nombre: 'Jorge Carlos Pérez',
-        titulo: 'Curso de Node'
-    })
-})
+// app.get('/generic', (req, res)=>{
+//     res.render('generic', {
+//         nombre: 'Jorge Carlos Pérez',
+//         titulo: 'Curso de Node'
+//     })
+// })
 
-app.get('/elements', (req, res)=>{
-    res.render('elements', {
-        nombre: 'Jorge Carlos Pérez',
-        titulo: 'Curso de Node'
-    })
-})
+// app.get('/elements', (req, res)=>{
+//     res.render('elements', {
+//         nombre: 'Jorge Carlos Pérez',
+//         titulo: 'Curso de Node'
+//     })
+// })
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname+'/public/old/404.html')
+    res.sendFile(__dirname+'/public/old/index.html')
 })
 
 app.listen(port, () => {
