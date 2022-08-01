@@ -43,7 +43,6 @@ class Servidor {
     }
 
     sockets() {
-
         this.io.on('connection', socketController );
 
     }
