@@ -75,7 +75,7 @@ class Servidor{
         this.app.use(this.paths.uploads, uploads)
     }
     sockets(){
-        this.io.on('connection',socketController)
+        this.io.on('connection',(socket)=> socketController(socket, this.io))
 
     }
 

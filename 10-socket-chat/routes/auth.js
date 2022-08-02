@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { validarCampos } from "../midlewares/validar-campos.js";
 import {check} from "express-validator";
-import { googleSignIn, login } from "../controllers/auth.controller.js";
+import { googleSignIn, login, renovarToken } from "../controllers/auth.controller.js";
+import { validarJWT } from '../midlewares/validar-jwt.js'
 
 const router = Router()
 
@@ -18,5 +19,9 @@ router.post('/google',[
     validarCampos
 ]
 ,googleSignIn)
+
+
+router.get('/', validarJWT, renovarToken)
+
 
 export {router}
